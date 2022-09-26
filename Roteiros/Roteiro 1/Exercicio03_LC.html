@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 03 - Luiz Carlos</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            function verificarIdadesMaiorMenor18(){
+                var idades = document.getElementById("txtIdades").value;
+                idades = idades.split(",");
+                maior18 = 0;
+                menor18 = 0;
+                for(i = 0; i < idades.length; i++){
+                    if(parseInt(idades[i]) >= 18){
+                        maior18++;
+                    }
+                    else{
+                        menor18++;
+                    }
+                }
+                //alert("Quantidade de maiores é " + maior18 + ", e a de menores é " + menor18);
+                document.write("Quantidade de maiores: " + maior18 + "; e menores: " + menor18);
+            }
+        </script>
+    </head>
+    <body>
+        Números: <input type = "text" id = "txtIdades">
+        <input type = "button" value = "Maiores e Menores de 18 Anos" onclick = "verificarIdadesMaiorMenor18()">
+    </body>
+</html>

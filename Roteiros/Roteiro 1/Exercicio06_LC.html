@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 06 - Luiz Carlos</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            function ordenarInteiros(){
+                var inteiros = document.getElementById("txtInteiros").value;
+                inteiros = inteiros.split(",");
+                for(i = 0; i < inteiros.length; i++){
+                    minimo = parseInt(inteiros[i]);
+                    pos = i;
+                    for(j = i + 1; j < inteiros.length; j++){
+                        if(minimo > parseInt(inteiros[j])){
+                            minimo = parseInt(inteiros[j]);
+                            pos = j;
+                        }
+                    }
+                    inteiros[pos] = parseInt(inteiros[i]);
+                    inteiros[i] = minimo;
+                }
+                document.write("Inteiros Ordenados: ");
+                for(i = 0; i < inteiros.length; i++){
+                    document.write(parseInt(inteiros[i]));
+                    if(i < inteiros.length - 1){
+                        document.write(", ");
+                    }
+                    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Inteiros: <input type = "text" id = "txtInteiros">
+        <input type = "button" value = "Ordenar Inteiros" onclick = "ordenarInteiros()">
+    </body>
+</html>

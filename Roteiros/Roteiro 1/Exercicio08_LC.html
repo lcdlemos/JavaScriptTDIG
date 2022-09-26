@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 08 - Luiz Carlos</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            function calcularFatorial(){
+                var valores = document.getElementById("txtValores").value;
+                valores = valores.split(",");
+                for(i = 0; i < valores.length; i++){
+                    var fatorial = 1;
+                    if(parseInt(valores[i]) >= 0){
+                        for(j = parseInt(valores[i]); j > 0; j--){
+                            fatorial *= j;
+                        }
+                        document.write("Fatorial de " + parseInt(valores[i]) + " é " + fatorial + "<br>");
+                    }
+                    else{
+                        document.write("Fatorial de " + parseInt(valores[i]) + " não existe!<br>");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Valores: <input type = "text" id = "txtValores">
+        <input type = "button" value = "Calcular Fatorial!" onclick = "calcularFatorial()">
+    </body>
+</html>

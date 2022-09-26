@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09 - Luiz Carlos</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            function determinarPositivosNegativos(){
+                var valores = document.getElementById("txtValores").value;
+                valores = valores.split(",");
+                positivos = 0;
+                negativos = 0;
+                soma = 0;
+                total = valores.length;
+                for(i = 0; i < valores.length; i++){
+                    soma += parseInt(valores[i]);
+                    if(valores[i] >= 0){
+                        positivos++;
+                    }
+                    else{
+                        negativos++;
+                    }
+                }
+                document.write("Valores Fornecidos: ");
+                for(i = 0; i < valores.length; i++){
+                    document.write(valores[i]);
+                    if(i < valores.length -1){
+                        document.write(", ");
+                    }
+                    else{
+                        document.write("<br>");
+                    }
+                }
+                document.write("Média Aritmética: " + soma/total + "<br>");
+                document.write("Quantidade de Positivos: " + positivos + " (" + 100*positivos/total + "%)<br>");
+                document.write("Quantidade de Negativos: " + negativos + " (" + 100*negativos/total + "%)");
+            }
+        </script>
+    </head>
+    <body>
+        Valores: <input type = "text" id = "txtValores">
+        <input type = "button" value = "Calcular Média, Quantidade e Percentual de Positivos e Negativos" onclick = "determinarPositivosNegativos()">
+    </body>
+</html>

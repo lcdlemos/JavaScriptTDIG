@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 10 - Luiz Carlos</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            function inverterValores(){
+                var valores = document.getElementById("txtValores").value;
+                valores = valores.split(",");
+                document.write("Valores Fornecidos: ");
+                for(i = 0; i < valores.length; i++){
+                    document.write(parseInt(valores[i]));
+                    if(i < valores.length - 1){
+                        document.write(", ");
+                    }
+                    else{
+                        document.write("<br>");
+                    }
+                }
+                document.write("Valores Invertidos: ");
+                for(i = valores.length - 1; i >= 0 ; i--){
+                    document.write(parseInt(valores[i]));
+                    if(i > 0){
+                        document.write(", ");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Valores: <input type = "text" id = "txtValores">
+        <input type = "button" value = "Inverter Valores" onclick = "inverterValores()">
+    </body>
+</html>
